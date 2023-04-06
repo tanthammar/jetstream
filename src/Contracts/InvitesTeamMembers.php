@@ -9,7 +9,6 @@ interface InvitesTeamMembers
      *
      * @param  mixed  $user
      * @param  mixed  $team
-     * @param  string  $email
      * @return void
      */
     public function invite($user, $team, string $email, string $role = null);

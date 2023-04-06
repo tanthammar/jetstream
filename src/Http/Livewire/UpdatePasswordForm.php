@@ -19,10 +19,17 @@ class UpdatePasswordForm extends Component
         'password_confirmation' => '',
     ];
 
+    public bool $forceReset = false;
+
+    public function mount(): void
+    {
+        // must be set in mount else route is livewire.message on next request
+        $this->forceReset = request()?->routeIs('force-reset-password');
+    }
+
     /**
      * Update the user's password.
      *
-     * @param  \Laravel\Fortify\Contracts\UpdatesUserPasswords  $updater
      * @return void
      */
     public function updatePassword(UpdatesUserPasswords $updater)
@@ -31,8 +38,8 @@ class UpdatePasswordForm extends Component
 
         $updater->update(Auth::user(), $this->state);
 
-        if (request()->hasSession()) {
-            request()->session()->put([
+        if (request()?->hasSession()) {
+            request()?->session()->put([
                 'password_hash_'.Auth::getDefaultDriver() => Auth::user()->getAuthPassword(),
             ]);
         }
@@ -44,6 +51,10 @@ class UpdatePasswordForm extends Component
         ];
 
         $this->emit('saved');
+
+        if ($this->forceReset) {
+            $this->redirectRoute('filament.pages.dashboard');
+        }
     }
 
     /**

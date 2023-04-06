@@ -109,7 +109,7 @@ trait HasTeams
     /**
      * Get the role that the user has on the team.
      */
-    public function teamRole(mixed $team): \Laravel\Jetstream\Role|null
+    public function teamRole(mixed $team): Role|null
     {
         if ($this->ownsTeam($team)) {
             return new OwnerRole;
@@ -130,7 +130,6 @@ trait HasTeams
 
     /**
      * Determine if the user has the given role on the given team.
-     *
      */
     public function hasTeamRole(mixed $team, string $role): bool
     {

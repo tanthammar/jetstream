@@ -9,7 +9,6 @@ interface AddsTeamMembers
      *
      * @param  mixed  $user
      * @param  mixed  $team
-     * @param  string  $email
      * @return void
      */
     public function add($user, $team, string $email, string $role = null);

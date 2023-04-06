@@ -14,8 +14,6 @@ class TeamInvitationController extends Controller
     /**
      * Accept a team invitation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Laravel\Jetstream\TeamInvitation  $invitation
      * @return \Illuminate\Http\RedirectResponse
      */
     public function accept(Request $request, TeamInvitation $invitation)
@@ -37,8 +35,6 @@ class TeamInvitationController extends Controller
     /**
      * Cancel the given team invitation.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Laravel\Jetstream\TeamInvitation  $invitation
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request, TeamInvitation $invitation)

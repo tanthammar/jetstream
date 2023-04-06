@@ -5,10 +5,8 @@ namespace Laravel\Jetstream\Http\Controllers\Inertia;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Agent;
-use Laravel\Fortify\Actions\DisableTwoFactorAuthentication;
 use Laravel\Fortify\Features;
 use Laravel\Jetstream\Jetstream;
 
@@ -19,7 +17,6 @@ class UserProfileController extends Controller
     /**
      * Show the general profile settings screen.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Inertia\Response
      */
     public function show(Request $request)
@@ -35,7 +32,6 @@ class UserProfileController extends Controller
     /**
      * Get the current sessions.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Support\Collection
      */
     public function sessions(Request $request)

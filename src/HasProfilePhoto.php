@@ -4,15 +4,12 @@ namespace Laravel\Jetstream;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use Laravel\Jetstream\Features;
 
 trait HasProfilePhoto
 {
     /**
      * Update the user's profile photo.
      *
-     * @param  \Illuminate\Http\UploadedFile  $photo
      * @return void
      */
     public function updateProfilePhoto(UploadedFile $photo)
@@ -71,7 +68,7 @@ trait HasProfilePhoto
      */
     protected function defaultProfilePhotoUrl()
     {
-        $name = trim(collect(explode(' ', $this->name))->map(function ($segment) {
+        $name = trim(collect(explode(' ', $this->name ?? $this->first_name.$this->last_name))->map(function ($segment) {
             return mb_substr($segment, 0, 1);
         })->join(' '));
 

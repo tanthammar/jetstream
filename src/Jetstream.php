@@ -89,7 +89,6 @@ class Jetstream
     /**
      * Find the role with the given key.
      *
-     * @param  string  $key
      * @return \Laravel\Jetstream\Role
      */
     public static function findRole(string $key)
@@ -100,9 +99,6 @@ class Jetstream
     /**
      * Define a role.
      *
-     * @param  string  $key
-     * @param  string  $name
-     * @param  array  $permissions
      * @return \Laravel\Jetstream\Role
      */
     public static function role(string $key, string $name, array $permissions)
@@ -131,7 +127,6 @@ class Jetstream
     /**
      * Define the available API token permissions.
      *
-     * @param  array  $permissions
      * @return static
      */
     public static function permissions(array $permissions)
@@ -144,7 +139,6 @@ class Jetstream
     /**
      * Define the default permissions that should be available to new API tokens.
      *
-     * @param  array  $permissions
      * @return static
      */
     public static function defaultApiTokenPermissions(array $permissions)
@@ -157,7 +151,6 @@ class Jetstream
     /**
      * Return the permissions in the given list that are actually defined permissions for the application.
      *
-     * @param  array  $permissions
      * @return array
      */
     public static function validPermissions(array $permissions)
@@ -229,7 +222,6 @@ class Jetstream
     /**
      * Find a user instance by the given email address or fail.
      *
-     * @param  string  $email
      * @return mixed
      */
     public static function findUserByEmailOrFail(string $email)
@@ -262,7 +254,6 @@ class Jetstream
     /**
      * Specify the user model that should be used by Jetstream.
      *
-     * @param  string  $model
      * @return static
      */
     public static function useUserModel(string $model)
@@ -297,7 +288,6 @@ class Jetstream
     /**
      * Specify the team model that should be used by Jetstream.
      *
-     * @param  string  $model
      * @return static
      */
     public static function useTeamModel(string $model)
@@ -320,7 +310,6 @@ class Jetstream
     /**
      * Specify the membership model that should be used by Jetstream.
      *
-     * @param  string  $model
      * @return static
      */
     public static function useMembershipModel(string $model)
@@ -343,7 +332,6 @@ class Jetstream
     /**
      * Specify the team invitation model that should be used by Jetstream.
      *
-     * @param  string  $model
      * @return static
      */
     public static function useTeamInvitationModel(string $model)
@@ -356,7 +344,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to create teams.
      *
-     * @param  string  $class
      * @return void
      */
     public static function createTeamsUsing(string $class)
@@ -367,7 +354,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to update team names.
      *
-     * @param  string  $class
      * @return void
      */
     public static function updateTeamNamesUsing(string $class)
@@ -378,7 +364,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to add team members.
      *
-     * @param  string  $class
      * @return void
      */
     public static function addTeamMembersUsing(string $class)
@@ -389,7 +374,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to add team members.
      *
-     * @param  string  $class
      * @return void
      */
     public static function inviteTeamMembersUsing(string $class)
@@ -400,7 +384,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to remove team members.
      *
-     * @param  string  $class
      * @return void
      */
     public static function removeTeamMembersUsing(string $class)
@@ -411,7 +394,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to delete teams.
      *
-     * @param  string  $class
      * @return void
      */
     public static function deleteTeamsUsing(string $class)
@@ -422,7 +404,6 @@ class Jetstream
     /**
      * Register a class / callback that should be used to delete users.
      *
-     * @param  string  $class
      * @return void
      */
     public static function deleteUsersUsing(string $class)

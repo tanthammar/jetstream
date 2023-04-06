@@ -138,7 +138,6 @@ class JetstreamServiceProvider extends ServiceProvider
     /**
      * Register the given component.
      *
-     * @param  string  $component
      * @return void
      */
     protected function registerComponent(string $component)
