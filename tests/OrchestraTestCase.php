@@ -5,7 +5,6 @@ namespace Laravel\Jetstream\Tests;
 use Laravel\Fortify\FortifyServiceProvider;
 use Laravel\Jetstream\Features;
 use Laravel\Jetstream\JetstreamServiceProvider;
-use Mockery;
 use Orchestra\Testbench\TestCase;
 
 abstract class OrchestraTestCase extends TestCase
