@@ -2,6 +2,7 @@
 
 namespace Laravel\Jetstream\Http\Livewire;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 use Livewire\Component;
@@ -53,7 +54,7 @@ class UpdatePasswordForm extends Component
         $this->emit('saved');
 
         if ($this->forceReset) {
-            $this->redirectRoute('filament.pages.dashboard');
+            $this->redirectRoute(RouteServiceProvider::HOME);
         }
     }
 
